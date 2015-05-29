@@ -46,35 +46,86 @@ elseif PlayerB.PlayerRating > PlayerA.PlayerRating
     PlayerB.Strength = 1;
     PlayerA.Strength = 0;
 end
-%%
-% % if PlayerA.Strength == 1 
-% %     SLD = PlayerA.PlayerRating - PlayerB.PlayerRating;
-% %         if SLD < 19
-% %             PlayerA.Race = 2
-% %             PlayerB.Race = 2
-% %         elseif SLD > 19
-% %             PlayerA.Race = 2
-% %             PlayerB.Race = 1
-% %         end
-% % end
-%%
-% if PlayerB.Strength == 1
-%     SLD = PlayerB.PlayerRating - PlayerA.PlayerRating;
-%         if SLD ==[0:19]
+
+% Send to appropriate Bracket Function
+% Need to have a temp 'Greater' tag and preserve identities; 
+% instead of coding reciprocals
+
+% Need a better what to characterize inputs
+%% 0-39 Bracket Function %Logic functions correctly
+% if PlayerA.Strength == 1 
+%     SLD = PlayerA.PlayerRating - PlayerB.PlayerRating;
+%         if SLD <= 19
 %             PlayerA.Race = 2
 %             PlayerB.Race = 2
-%         elseif SLD >19
+%         elseif SLD > 19
+%             PlayerA.Race = 2
+%             PlayerB.Race = 1
+%         end
+% 
+% elseif PlayerB.Strength == 1
+%     SLD = PlayerB.PlayerRating - PlayerA.PlayerRating;
+%         if SLD <= 19
+%             PlayerA.Race = 2
+%             PlayerB.Race = 2
+%         elseif SLD > 19
 %             PlayerA.Race = 1
 %             PlayerB.Race = 2
 %         end  
 % end
-%% Race Determination
-% if SLD ==[0:19]
-%     PlayerA.Race = 2
-%     PlayerB.Race = 2
-% elseif SLD >19
-%     PlayerA.Race = 2
-%     PlayerB.Race = 1
+%% 40-49 Bracket Function
+if PlayerA.Strength == 1 
+    SLD = PlayerA.PlayerRating - PlayerB.PlayerRating;
+        if SLD <= 10
+            PlayerA.Race = 3
+            PlayerB.Race = 3
+        elseif 10<SLD&SLD<27
+            PlayerA.Race = 3
+            PlayerB.Race = 2
+        end
+
+elseif PlayerB.Strength == 1
+    SLD = PlayerB.PlayerRating - PlayerA.PlayerRating;
+        if SLD <= 10
+            PlayerA.Race = 300
+            PlayerB.Race = 300
+        elseif 10<SLD&SLD<27
+            PlayerA.Race = 200
+            PlayerB.Race = 300
+        end  
+end
+
+% if PlayerA.Strength == 1 
+%     SLD = PlayerA.PlayerRating - PlayerB.PlayerRating;
+%         if SLD < 11
+%             PlayerA.Race = 3
+%             PlayerB.Race = 3
+%         
+%         elseif 10 < SLD < 27
+%             PlayerA.Race = 3
+%             PlayerB.Race = 2
+%         
+%         elseif SLD >= 27
+%             PlayerA.Race = 4
+%             PlayerB.Race = 2
+%         end
+% 
+% elseif PlayerB.Strength == 1
+%     SLD = PlayerB.PlayerRating - PlayerA.PlayerRating;
+%         if SLD < 11
+%             PlayerA.Race = 3
+%             PlayerB.Race = 3
+%         
+%         elseif 10 > SLD > 27
+%             PlayerA.Race = 2
+%             PlayerB.Race = 3
+%         
+%         elseif SLD >= 27
+%             PlayerA.Race = 2
+%             PlayerB.Race = 4
+%         end  
 % end
+
+
 
 
