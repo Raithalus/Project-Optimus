@@ -73,59 +73,52 @@ end
 %             PlayerB.Race = 2
 %         end  
 % end
-%% 40-49 Bracket Function
+%% 40-49 Bracket Function % Logic functions correctly
 if PlayerA.Strength == 1 
     SLD = PlayerA.PlayerRating - PlayerB.PlayerRating;
         if SLD <= 10
             PlayerA.Race = 3
             PlayerB.Race = 3
-        elseif 10<SLD&SLD<27
+        elseif 10 < SLD & SLD < 27
             PlayerA.Race = 3
+            PlayerB.Race = 2
+        elseif SLD >= 27
+            PlayerA.Race = 4
             PlayerB.Race = 2
         end
 
 elseif PlayerB.Strength == 1
     SLD = PlayerB.PlayerRating - PlayerA.PlayerRating;
         if SLD <= 10
-            PlayerA.Race = 300
-            PlayerB.Race = 300
-        elseif 10<SLD&SLD<27
-            PlayerA.Race = 200
-            PlayerB.Race = 300
+            PlayerA.Race = 3
+            PlayerB.Race = 3
+        elseif 10 < SLD & SLD < 27
+            PlayerA.Race = 2
+            PlayerB.Race = 3
+        elseif SLD >= 27
+            PlayerA.Race = 2
+            PlayerB.Race = 4
         end  
 end
-
-% if PlayerA.Strength == 1 
-%     SLD = PlayerA.PlayerRating - PlayerB.PlayerRating;
-%         if SLD < 11
-%             PlayerA.Race = 3
-%             PlayerB.Race = 3
-%         
-%         elseif 10 < SLD < 27
-%             PlayerA.Race = 3
-%             PlayerB.Race = 2
-%         
-%         elseif SLD >= 27
-%             PlayerA.Race = 4
-%             PlayerB.Race = 2
-%         end
-% 
-% elseif PlayerB.Strength == 1
-%     SLD = PlayerB.PlayerRating - PlayerA.PlayerRating;
-%         if SLD < 11
-%             PlayerA.Race = 3
-%             PlayerB.Race = 3
-%         
-%         elseif 10 > SLD > 27
-%             PlayerA.Race = 2
-%             PlayerB.Race = 3
-%         
-%         elseif SLD >= 27
-%             PlayerA.Race = 2
-%             PlayerB.Race = 4
-%         end  
-% end
-
+%% 50-69 Bracket Function
+if PlayerA.Strength == 1
+    SLD = PlayerA.PlayerRating - PlayerB.PlayerRating;
+    if SLD <=6
+        PlayerA.Race = 4
+        PlayerB.Race = 4
+    elseif 6 < SLD & SLD < 19
+        PlayerA.Race = 4
+        PlayerB.Race = 3
+    elseif 18 < SLD & SLD < 30
+        PlayerA.Race = 5
+        PlayerB.Race = 3
+    elseif 29 < SLD & SLD < 40
+        PlayerA.Race = 4
+        PlayerB.Race = 2
+    elseif 39 < SLD & SLD < 49
+        PlayerA.Race = 5
+        PlayerB.Race = 2
+    elseif SLD >= 4
 
 
 
